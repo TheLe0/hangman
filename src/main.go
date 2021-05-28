@@ -11,7 +11,7 @@ import (
 )
 
 func randomWord() string {
-	var words [5]string
+	var words [11]string
 	rand.Seed(time.Now().UnixNano())
 
 	words[0] = "Car"
@@ -19,6 +19,12 @@ func randomWord() string {
 	words[2] = "Hockey"
 	words[3] = "Switch"
 	words[4] = "Apple"
+	words[5] = "Book"
+	words[6] = "Wild"
+	words[7] = "Canada"
+	words[8] = "King"
+	words[9] = "Penguin"
+	words[10] = "Hurricane"
 
 	return words[rand.Intn(5)]
 }
@@ -28,6 +34,8 @@ func main() {
 	var word string
 	var input string
 	var lifes int
+	var play int
+	var matches int
 	logo := figure.NewColorFigure("Hangman", "", "red", true)
 	win := figure.NewColorFigure("You Win!", "", "green", true)
 	lost := figure.NewColorFigure("You Died!", "", "red", true)
@@ -36,97 +44,152 @@ func main() {
 	stages[0] = `
 			+---+
 			|   |
-			O   |
-		   /|\  |
-		   / \  |
-				|
+			|   0
+			|  /|\
+			|  / \
+			|
 		=========
 	`
 
 	stages[1] = `
 			+---+
 			|   |
-			O   |
-		   /|\  |
-		   /    |
-				|
+			|   0
+			|  /|\
+			|  /
+			|
 		=========
 	`
 
 	stages[2] = `
 			+---+
 			|   |
-			O   |
-		   /|\  |
-			    |
-				|
+			|   0
+			|  /|\
+			|
+			|
 		=========
 	`
 
 	stages[3] = `
 			+---+
 			|   |
-			O   |
-		   /|  	|
-				|
-				|
+			|   0
+			|  /|
+			|
+			|
 		=========
 	`
 
 	stages[4] = `
 			+---+
 			|   |
-			O   |
-		   /  	|
-				|
-				|
+			|   0
+			|  /
+			|
+			|
 		=========
 	`
 
 	stages[5] = `
 			+---+
 			|   |
-			O   |
-				|
-				|
-				|
+			|   0
+			|
+			|
+			|
 		=========
 	`
 
 	stages[6] = `
 			+---+
 			|   |
-				|
-				|
-				|
-				|
+			|    
+			|
+			|
+			|
 		=========
 	`
 
 	lifes = 6
 	word = strings.ToLower(randomWord())
 
-	logo.Print()
+	positions := make(map[int]string)
+	letters := make(map[int]string)
+	play = 0
+	matches = 0
+
+	for pos := range word {
+
+		positions[pos] = ""
+	}
+
+	lettersHistoric := ""
+
 	for lifes >= 0 {
 		screen.Clear()
 		screen.MoveTopLeft()
+		logo.Print()
 
 		fmt.Printf(stages[lifes])
+
+		hiddenWord := ""
+
+		for pos, char := range word {
+
+			if positions[pos] != "" {
+				hiddenWord += " " + string(char)
+			} else {
+				hiddenWord += " _"
+			}
+		}
+
+		fmt.Println(hiddenWord)
+		fmt.Println("")
+
+		if matches == len(word) {
+			win.Print()
+			fmt.Println("")
+			break
+		}
+
+		fmt.Println("Letters played: " + lettersHistoric)
+		fmt.Println("")
 		fmt.Println("Digit a letter: ")
+		fmt.Println("")
 		fmt.Scanln(&input)
 		input = strings.ToLower(input)
+		play++
 
 		if len(input) == 1 {
 
-			for pos, char := range word {
-				fmt.Printf("character %c starts at byte position %d\n", char, pos)
+			counter := 0
+
+			letters[play] = input
+
+			if lettersHistoric == "" {
+				lettersHistoric += input
+			} else {
+				lettersHistoric += " - " + input
 			}
 
-			lifes--
+			for pos, char := range word {
+
+				if string(char) == input && positions[pos] == "" {
+					positions[pos] = string(char)
+					counter++
+					matches++
+				}
+			}
+
+			if counter == 0 {
+				lifes--
+			}
 
 		} else {
 			if input == word {
 				win.Print()
+				fmt.Println("")
 				break
 			} else {
 				lifes--
@@ -137,6 +200,9 @@ func main() {
 
 	if lifes < 0 {
 		lost.Print()
+		fmt.Println("")
+		fmt.Println("The word was: " + word)
+		fmt.Println("")
 	}
 
 }
