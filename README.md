@@ -1,2 +1,4 @@
 # Hangman
-A simple hangman console game
+A simple console implemantation of the hangman game.
+
+![Print](./images/game.PNG)
