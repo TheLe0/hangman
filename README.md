@@ -1,4 +1,6 @@
 # Hangman
+[![Build Status](https://www.travis-ci.com/TheLe0/Hangman.svg?branch=main)](https://www.travis-ci.com/TheLe0/Hangman)
+
 A simple console implemantation of the hangman game.
 
 ![Print](./images/game.PNG)
