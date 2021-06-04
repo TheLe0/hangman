@@ -11,7 +11,7 @@ import (
 )
 
 func randomWord() string {
-	var words [11]string
+	var words [16]string
 	rand.Seed(time.Now().UnixNano())
 
 	words[0] = "Car"
@@ -25,6 +25,11 @@ func randomWord() string {
 	words[8] = "King"
 	words[9] = "Penguin"
 	words[10] = "Hurricane"
+	words[11] = "Pirate"
+	words[12] = "Ray"
+	words[13] = "Dolphin"
+	words[14] = "Twin"
+	words[15] = "Squirrel"
 
 	return words[rand.Intn(5)]
 }
