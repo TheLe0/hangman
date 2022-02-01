@@ -6,8 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/common-nighthawk/go-figure"
-	"github.com/inancgumus/screen"
+	"github.com/TheLe0/hangman/ui"
 )
 
 func randomWord() string {
@@ -56,9 +55,6 @@ func main() {
 	var lifes int
 	var play int
 	var matches int
-	logo := figure.NewColorFigure("Hangman", "", "red", true)
-	win := figure.NewColorFigure("You Win!", "", "green", true)
-	lost := figure.NewColorFigure("You Died!", "", "red", true)
 	var stages [7]string
 
 	stages[0] = `
@@ -147,9 +143,8 @@ func main() {
 	lettersHistoric := ""
 
 	for lifes >= 0 {
-		screen.Clear()
-		screen.MoveTopLeft()
-		logo.Print()
+		ui.ClearScreen()
+		ui.GameTitle()
 
 		fmt.Printf(stages[lifes])
 
@@ -168,8 +163,7 @@ func main() {
 		fmt.Println("")
 
 		if matches == len(word) {
-			win.Print()
-			fmt.Println("")
+			ui.GameWon()
 			break
 		}
 
@@ -208,8 +202,7 @@ func main() {
 
 		} else {
 			if input == word {
-				win.Print()
-				fmt.Println("")
+				ui.GameWon()
 				break
 			} else {
 				lifes--
@@ -219,8 +212,7 @@ func main() {
 	}
 
 	if lifes < 0 {
-		lost.Print()
-		fmt.Println("")
+		ui.GameLost()
 		fmt.Println("The word was: " + word)
 		fmt.Println("")
 	}
