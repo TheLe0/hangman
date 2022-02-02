@@ -16,8 +16,10 @@ func GameWon() {
 	fmt.Println("")
 }
 
-func GameLost() {
+func GameLost(word string) {
 	lost := figure.NewColorFigure("You Died!", "", "red", true)
 	lost.Print()
+	fmt.Println("")
+	fmt.Println("The word was: " + word)
 	fmt.Println("")
 }

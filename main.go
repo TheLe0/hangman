@@ -55,77 +55,6 @@ func main() {
 	var lifes int
 	var play int
 	var matches int
-	var stages [7]string
-
-	stages[0] = `
-			+---+
-			|   |
-			|   0
-			|  /|\
-			|  / \
-			|
-		=========
-	`
-
-	stages[1] = `
-			+---+
-			|   |
-			|   0
-			|  /|\
-			|  /
-			|
-		=========
-	`
-
-	stages[2] = `
-			+---+
-			|   |
-			|   0
-			|  /|\
-			|
-			|
-		=========
-	`
-
-	stages[3] = `
-			+---+
-			|   |
-			|   0
-			|  /|
-			|
-			|
-		=========
-	`
-
-	stages[4] = `
-			+---+
-			|   |
-			|   0
-			|  /
-			|
-			|
-		=========
-	`
-
-	stages[5] = `
-			+---+
-			|   |
-			|   0
-			|
-			|
-			|
-		=========
-	`
-
-	stages[6] = `
-			+---+
-			|   |
-			|    
-			|
-			|
-			|
-		=========
-	`
 
 	lifes = 6
 	word = strings.ToLower(randomWord())
@@ -146,7 +75,7 @@ func main() {
 		ui.ClearScreen()
 		ui.GameTitle()
 
-		fmt.Printf(stages[lifes])
+		fmt.Printf(ui.RemainLifes(lifes))
 
 		hiddenWord := ""
 
@@ -212,9 +141,7 @@ func main() {
 	}
 
 	if lifes < 0 {
-		ui.GameLost()
-		fmt.Println("The word was: " + word)
-		fmt.Println("")
+		ui.GameLost(word)
 	}
 
 }
