@@ -1,16 +1,13 @@
 # Hangman
-[![Build Status](https://www.travis-ci.com/TheLe0/Hangman.svg?branch=main)](https://www.travis-ci.com/TheLe0/Hangman)
+[![CI](https://github.com/TheLe0/hangman/actions/workflows/test.yml/badge.svg)](https://github.com/TheLe0/hangman/actions/workflows/test.yml)
 
 A simple console implemantation of the hangman game.
 
-To run the app:
-```bash
-go run main.go
-```
+To run the app you must have docker installed on your machine and run the following commands:
 
-To build an executable of the app:
 ```bash
-go build main.go
+docker build -t hangman:latest .
+docker run -it hangman:latest
 ```
 
 ![Print](./images/game.PNG)
