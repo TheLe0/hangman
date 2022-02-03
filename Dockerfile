@@ -7,6 +7,7 @@ COPY go.sum go.sum
 COPY main.go main.go
 COPY data data
 COPY ui ui
+COPY model model
 
 RUN go mod download
 RUN go install
