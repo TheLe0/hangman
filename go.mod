@@ -1,6 +1,6 @@
 module github.com/TheLe0/hangman
 
-go 1.17
+go 1.19
 
 require (
 	github.com/common-nighthawk/go-figure v0.0.0-20200609044655-c4b36f998cf2
