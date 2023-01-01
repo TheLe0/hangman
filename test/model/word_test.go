@@ -18,3 +18,18 @@ func TestParseLineIntoWord(t *testing.T) {
 		t.Errorf("Expected clue to be 'Birds', but got '%s'", word.Clue)
 	}
 }
+
+func TestParseJsonIntoWord(t *testing.T) {
+
+	jsonFile := `
+	[
+		{ "word": "Car", "clue": "Transport"},
+    	{ "word": "Soup", "clue": "Food"}
+	]`
+
+	wordList := model.ParseJsonIntoWord([]byte(jsonFile))
+
+	if len(wordList) != 2 {
+		t.Errorf("Expected array with 2 elements', but got '%d'", len(wordList))
+	}
+}

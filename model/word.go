@@ -1,12 +1,21 @@
 package model
 
 import (
+	"encoding/json"
 	"strings"
 )
 
 type Word struct {
-	Value string
-	Clue string
+	Value string `json:"word"`
+	Clue string `json:"clue"`
+}
+
+func ParseJsonIntoWord(jsonFile []byte) []Word {
+	var wordList []Word
+
+	json.Unmarshal([]byte(jsonFile), &wordList)
+
+	return wordList
 }
 
 func ParseLineIntoWord(line string) Word {
