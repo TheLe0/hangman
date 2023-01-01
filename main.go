@@ -2,48 +2,21 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"math/rand"
 	"strings"
 	"time"
 
 	"github.com/TheLe0/hangman/ui"
+	"github.com/TheLe0/hangman/model"
 )
 
-func randomWord() string {
-	var words [31]string
+func randomWord() model.Word {
 	rand.Seed(time.Now().UnixNano())
 
-	words[0] = "Car"
-	words[1] = "Home"
-	words[2] = "Hockey"
-	words[3] = "Switch"
-	words[4] = "Apple"
-	words[5] = "Book"
-	words[6] = "Wild"
-	words[7] = "Canada"
-	words[8] = "King"
-	words[9] = "Penguin"
-	words[10] = "Hurricane"
-	words[11] = "Pirate"
-	words[12] = "Ray"
-	words[13] = "Dolphin"
-	words[14] = "Twin"
-	words[15] = "Squirrel"
-	words[16] = "Barbecue"
-	words[17] = "Squirrel"
-	words[18] = "Tomato"
-	words[19] = "Aesthetic"
-	words[20] = "Anarchy"
-	words[21] = "Neverland"
-	words[22] = "Blasphemous"
-	words[23] = "Cookbook"
-	words[24] = "Soccer"
-	words[25] = "Language"
-	words[26] = "Payroll"
-	words[27] = "Settlement"
-	words[28] = "Retail"
-	words[29] = "Acknowledgement"
-	words[30] = "Freight"
+	plan, _ := ioutil.ReadFile("./data/words.json")
+
+	words := model.ParseJsonIntoWord(plan)
 
 	return words[rand.Intn(30)]
 }
@@ -51,13 +24,16 @@ func randomWord() string {
 func main() {
 
 	var word string
+	var clue string
 	var input string
 	var lifes int
 	var play int
 	var matches int
 
 	lifes = 6
-	word = strings.ToLower(randomWord())
+	wordObj := randomWord()
+	word = strings.ToLower(wordObj.Value)
+	clue = strings.ToLower(wordObj.Clue)
 
 	positions := make(map[int]string)
 	letters := make(map[int]string)
@@ -96,6 +72,8 @@ func main() {
 			break
 		}
 
+		fmt.Println("Clue: " + clue)
+		fmt.Println("")
 		fmt.Println("Letters played: " + lettersHistoric)
 		fmt.Println("")
 		fmt.Println("Digit a letter: ")
