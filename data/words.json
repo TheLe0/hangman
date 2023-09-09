@@ -97,10 +97,6 @@
     },
     {
         "word": "Neverland",
-        "clue": "Place"
-    },
-    {
-        "word": "Neverland",
         "clue": "Unreachable"
     },
     {
@@ -122,5 +118,241 @@
     {
         "word": "Acknowledgement",
         "clue": "virtue"
+    },
+    {
+        "word": "Car",
+        "clue": "Vehicle"
+    },
+    {
+        "word": "Book",
+        "clue": "Literature"
+    },
+    {
+        "word": "Tree",
+        "clue": "Plant"
+    },
+    {
+        "word": "Dog",
+        "clue": "Animal"
+    },
+    {
+        "word": "Phone",
+        "clue": "Communication"
+    },
+    {
+        "word": "Cake",
+        "clue": "Dessert"
+    },
+    {
+        "word": "Mountain",
+        "clue": "Geography"
+    },
+    {
+        "word": "Computer",
+        "clue": "Technology"
+    },
+    {
+        "word": "Guitar",
+        "clue": "Musical Instrument"
+    },
+    {
+        "word": "Soccer",
+        "clue": "Sport"
+    },
+    {
+        "word": "Chair",
+        "clue": "Furniture"
+    },
+    {
+        "word": "Fish",
+        "clue": "Aquatic Creature"
+    },
+    {
+        "word": "Pencil",
+        "clue": "Writing Tool"
+    },
+    {
+        "word": "Sun",
+        "clue": "Celestial Body"
+    },
+    {
+        "word": "Pizza",
+        "clue": "Food"
+    },
+    {
+        "word": "Train",
+        "clue": "Transportation"
+    },
+    {
+        "word": "Shoes",
+        "clue": "Footwear"
+    },
+    {
+        "word": "Moon",
+        "clue": "Celestial Body"
+    },
+    {
+        "word": "Table",
+        "clue": "Furniture"
+    },
+    {
+        "word": "Cat",
+        "clue": "Animal"
+    },
+    {
+        "word": "Pen",
+        "clue": "Writing Tool"
+    },
+    {
+        "word": "Television",
+        "clue": "Entertainment"
+    },
+    {
+        "word": "Bicycle",
+        "clue": "Transportation"
+    },
+    {
+        "word": "Bird",
+        "clue": "Animal"
+    },
+    {
+        "word": "Movie",
+        "clue": "Entertainment"
+    },
+    {
+        "word": "Desk",
+        "clue": "Furniture"
+    },
+    {
+        "word": "Laptop",
+        "clue": "Technology"
+    },
+    {
+        "word": "Ice Cream",
+        "clue": "Dessert"
+    },
+    {
+        "word": "River",
+        "clue": "Body of Water"
+    },
+    {
+        "word": "Helicopter",
+        "clue": "Aircraft"
+    },
+    {
+        "word": "Spoon",
+        "clue": "Utensil"
+    },
+    {
+        "word": "Horse",
+        "clue": "Animal"
+    },
+    {
+        "word": "Radio",
+        "clue": "Communication"
+    },
+    {
+        "word": "Candle",
+        "clue": "Light Source"
+    },
+    {
+        "word": "Jacket",
+        "clue": "Clothing"
+    },
+    {
+        "word": "Ocean",
+        "clue": "Body of Water"
+    },
+    {
+        "word": "Camera",
+        "clue": "Photography"
+    },
+    {
+        "word": "Chair",
+        "clue": "Furniture"
+    },
+    {
+        "word": "Elephant",
+        "clue": "Mammal"
+    },
+    {
+        "word": "Map",
+        "clue": "Navigation"
+    },
+    {
+        "word": "Key",
+        "clue": "Tool"
+    },
+    {
+        "word": "Chocolate",
+        "clue": "Dessert"
+    },
+    {
+        "word": "Rainbow",
+        "clue": "Natural Phenomenon"
+    },
+    {
+        "word": "Clock",
+        "clue": "Timekeeping"
+    },
+    {
+        "word": "Shirt",
+        "clue": "Clothing"
+    },
+    {
+        "word": "Fire",
+        "clue": "Element"
+    },
+    {
+        "word": "Bus",
+        "clue": "Transportation"
+    },
+    {
+        "word": "Flower",
+        "clue": "Plant"
+    },
+    {
+        "word": "Guitar",
+        "clue": "Musical Instrument"
+    },
+    {
+        "word": "Coffee",
+        "clue": "Beverage"
+    },
+    {
+        "word": "Beach",
+        "clue": "Coastline"
+    },
+    {
+        "word": "Rain",
+        "clue": "Weather"
+    },
+    {
+        "word": "Helmet",
+        "clue": "Protective Gear"
+    },
+    {
+        "word": "Mirror",
+        "clue": "Reflective Surface"
+    },
+    {
+        "word": "Garden",
+        "clue": "Outdoor Space"
+    },
+    {
+        "word": "Moonlight",
+        "clue": "Natural Light"
+    },
+    {
+        "word": "Basket",
+        "clue": "Container"
+    },
+    {
+        "word": "Mountain",
+        "clue": "Geographical Feature"
+    },
+    {
+        "word": "Mailbox",
+        "clue": "Postal Service"
     }
 ]
