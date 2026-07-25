@@ -1,4 +1,4 @@
-FROM golang:1.21.1-bullseye
+FROM golang:1.25.12-alpine
 
 WORKDIR /hangman
 
